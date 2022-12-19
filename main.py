@@ -9,11 +9,11 @@ from pip._vendor import cachecontrol
 import google.auth.transport.requests
 
 app = Flask("Google Login App")
-app.secret_key = "A not great key for prod envs"
+app.secret_key = "<Add your own unique secret key here>" # make sure this matches with that's in client_secret.json
 
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1" # to allow Http traffic for local dev
 
-GOOGLE_CLIENT_ID = "436347992059-rf107mrbo9l8ql1adtgr14n7pb1ivjpo.apps.googleusercontent.com"
+GOOGLE_CLIENT_ID = "<Add your own unique Google Client Id from the client_secret.json here>"
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "client_secret.json")
 
 flow = Flow.from_client_secrets_file(
