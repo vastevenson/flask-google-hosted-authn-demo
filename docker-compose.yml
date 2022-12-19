@@ -1,0 +1,8 @@
+version: '1'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - "80:80"
